@@ -1,0 +1,57 @@
+{
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "MARKET PLACE"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -90.06591796875,
+          -32.964452850852005
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "INSIDE GAMING"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.6640625,
+          -33.504759069226075
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "FINANCIAL UTILITY"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          28.017578125,
+          19.28833169203345
+        ]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "name": "WHITEBIT"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -48.017578125,
+          19.28833169203345
+        ]
+      }
+    }
+  ]
+}

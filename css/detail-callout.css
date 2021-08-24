@@ -1,0 +1,40 @@
+.poi-callout {
+    display: inline-block;
+    position: absolute;
+    width: 170px;
+    height: 112px;
+}
+
+.poi-callout .callout-container {
+    padding: 17px 23px 17px 17px;
+    box-sizing: border-box;
+    height: 112px;
+    border-radius: 15px;
+    pointer-events: all !important;
+    z-index: 88888888888888;
+}
+
+.poi-callout .callout-container a {
+    margin: 0;
+    font-family: Messina Sans, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 32px;
+    line-height: 36px;
+    color: #D8D7DE;
+    padding-bottom: 11px;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    text-shadow: 3px 3px 20px #222;
+}
+
+.poi-callout .callout-container a::before {
+    content: '';
+    width: 10%;
+    height: 2px;
+    background: #669EA4;
+    position: absolute;
+    left: 0;
+    top: -10px;
+}

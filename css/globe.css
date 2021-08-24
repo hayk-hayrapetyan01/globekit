@@ -1,0 +1,33 @@
+body {
+  margin:0;
+  padding:0;
+  width: 100%;
+  height: 100vh;
+}
+
+#globekit-container {
+  margin:0;
+  padding:0;
+  width: 100%;
+  height: 100vh;
+  position: relative;
+}
+
+#globekit-canvas {
+  width:100%;
+  height:100%;
+  margin: 0;
+  padding: 0;
+  background-image: url('../assets/galaxy.png');
+}
+
+#callout-container {
+  position: absolute;
+  overflow: hidden;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  /*pointer-events: all!important;*/
+}
