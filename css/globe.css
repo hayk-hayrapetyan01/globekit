@@ -18,7 +18,19 @@ body {
   height:100%;
   margin: 0;
   padding: 0;
-  background-image: url('../assets/galaxy.png');
+  background: url('../assets/stars2.jpg') center no-repeat;
+  background-size: cover;
+}
+
+#globekit-title {
+  position: fixed;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -50%);
+  z-index: 888888888;
+  font-size: 100px;
+  color: #fff;
+  letter-spacing: 22px;
 }
 
 #callout-container {

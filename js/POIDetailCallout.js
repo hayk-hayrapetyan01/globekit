@@ -29,13 +29,15 @@ class POIDetailCallout extends Callout {
     // This function sets offsets for the htmlElement from the lat/lon coord
     setPosition(position) {
         // const nx = position.screen.x - 29;
-        const nx = position.screen.x ;
+        const nx = position.screen.x;
         const ny = position.screen.y - 187;
+        // const nx = position.screen.x - 21;
+        // const ny = position.screen.y - 60;
         this.element.style.transform = `translate(${nx.toFixed(1)}px, ${ny.toFixed(0)}px)`;
-        this.element.style.zIndex = Math.round(10000 * position.screen.y);
+        this.element.style.zIndex = Math.round(100000 * position.screen.y);
 
         if (position.world.similarityToCameraVector < 0.3) {
-            // this.element.classList.add('hidden');
+            this.element.classList.add('hidden');
         } else {
             this.element.classList.remove('hidden');
         }

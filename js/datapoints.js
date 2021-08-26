@@ -1,5 +1,5 @@
 import {
-  GlobeKitView, PointGlobe, Atmosphere, Background, CalloutManager, CalloutDefinition, Icosphere
+  GlobeKitView, PointGlobe, Atmosphere, CalloutManager, CalloutDefinition, Icosphere, ShaderMaterial
 } from '../globekit.esm.js';
 import { POIPinCallout } from './POIPinCallout.js';
 import { POIDetailCallout } from './POIDetailCallout.js';
@@ -59,9 +59,15 @@ class MyGlobeKit {
     this.gkOptions = {
       apiKey,
       wasmPath: '../gkweb_bg.wasm',
-      attributes: {
-        alpha: false,
-      },
+      // attributes: {
+      //   alpha: false,
+      // },
+      antialias: true,
+      depth: true,
+      premultipliedAlpha: false,
+      powerPreferance: "default",
+      preserveDrawingBuffer: true,
+      clearColor: [0, 0, 0, 0],
     };
 
     // Create the GlobeKitView object
@@ -116,38 +122,39 @@ class MyGlobeKit {
       });
     };
 
-    this.gkview.hitTest = (e) => {
-      console.log(e, 55)
-    }
+    // this.gkview.hitTest = (e) => {
+    //   console.log(e, 55)
+    // }
 
     // **********************************************************************
     //                   BACKGROUNDS
     // **********************************************************************
     // Backgrounds provide more control over the look of the rendered scene
     // They require a texture image source
-    this.background = new Background('./assets/galaxy.png');
-    // Adding this drawable first ensures that it is drawn first.
-    this.gkview.addDrawable(this.background);
+    // this.background = new Background('../assets/star.jpg');
+    // console.log(this.background, 'bg')
+    // // Adding this drawable first ensures that it is drawn first.
+    // this.gkview.addDrawable(this.background);
 
     // **********************************************************************
     //                   ATMOSPHERES
     // **********************************************************************
-    this.atmosphere = new Atmosphere({
-      texture: './assets/disk.png',
-    });
-    this.atmosphere.nScale = 1.02;
-    this.atmosphere.isInteractive = true;
-    this.gkview.addDrawable(this.atmosphere);
+    // this.atmosphere = new Atmosphere({
+    //   texture: './assets/disk.png',
+    // });
+    // this.atmosphere.nScale = 1.02;
+    // this.atmosphere.isInteractive = true;
+    // this.gkview.addDrawable(this.atmosphere);
 
     // **********************************************************************
     //                   ICOSPHERE
     // **********************************************************************
-    // this.icosphere = new Icosphere('../assets/bg.png');
-    // // You should not have to touch this.
+    this.icosphere = new Icosphere('../assets/bg.png');
+    // You should not have to touch this.
     // this.icosphere.setInteractive(true, true, false);
-    // this.gkview.addDrawable(this.icosphere, () => {
-    //   this.gkview.startDrawing();
-    // });
+    this.gkview.addDrawable(this.icosphere, () => {
+      this.gkview.startDrawing();
+    });
 
     // **********************************************************************
     //                   POINTGLOBE
@@ -158,14 +165,15 @@ class MyGlobeKit {
       .then((data) => {
         // Some pointglobe settings
         const pointglobeParams = {
-          pointSize: 0.003,
-          randomPointSizeVariance: 0.003,
+          pointSize: 0.009,
+          randomPointSizeVariance: 0.009,
           randomPointSizeRatio: 0.2,
-          minPointAlpha: 0.0,
-          minPointSize: 0.003,
-          color: '#DBD80D',
+          minPointAlpha: 0.2,
+          minPointSize: 0.009,
+          color: '#AF5BEA',
         };
         this.pointglobe = new PointGlobe(textures, data, pointglobeParams);
+        console.log(this.pointglobe, 5)
         this.pointglobe.setInteractive(true, true, false);
       })
       .then(() => {

@@ -31,7 +31,7 @@
 
 .poi-callout .callout-container a::before {
     content: '';
-    width: 10%;
+    width: 15%;
     height: 2px;
     background: #669EA4;
     position: absolute;
